@@ -9,6 +9,21 @@
         />
         <title>Look Car Mza</title>
         <link rel="stylesheet" href="style.css" />
+        <!--CDNJS para iconos de Font Awesome-->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+            integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+        ></script>
+        <script type="text/javascript">
+            emailjs.init("tzC37RVZz8AcGz_N6");
+        </script>
         <script defer src="script.js"></script>
     </head>
     <body>
@@ -21,35 +36,70 @@
                         <nav id="nav" class="">
                             <ul id="links">
                                 <li>
-                                    <a href="#" class="seleccionado">INICIO</a>
+                                    <a
+                                        href="#inicio"
+                                        class="seleccionado"
+                                        onclick="seleccionar(this)"
+                                        >INICIO</a
+                                    >
                                 </li>
                                 <li>
-                                    <a href="#">SOBRE NOSOTROS</a>
+                                    <a
+                                        href="#sobremi"
+                                        onclick="seleccionar(this)"
+                                        >SOBRE NOSOTROS</a
+                                    >
                                 </li>
                                 <li>
-                                    <a href="#">SERVICIOS</a>
+                                    <a
+                                        href="#servicios"
+                                        onclick="seleccionar(this)"
+                                        >SERVICIOS</a
+                                    >
                                 </li>
                                 <li>
-                                    <a href="#">PRODUCTOS</a>
+                                    <a
+                                        href="#portfolio"
+                                        onclick="seleccionar(this)"
+                                        >PRODUCTOS</a
+                                    >
                                 </li>
                                 <li>
-                                    <a href="#">CONTACTO</a>
+                                    <a
+                                        href="#contacto"
+                                        onclick="seleccionar(this)"
+                                        >CONTACTO</a
+                                    >
                                 </li>
                             </ul>
                         </nav>
+                        <!--Iconos del menu responsive-->
+                        <div id="icono-nav" onclick="responsiveMenu()">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                        <!--Iconos de las redes sociales-->
+                        <div class="redes">
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#"
+                                ><i class="fa-brands fa-facebook"></i
+                            ></a>
+                            <a href="#"
+                                ><i class="fa-brands fa-instagram-square"></i
+                            ></a>
+                        </div>
                     </div>
                 </header>
                 <div class="presentacion">
                     <p class="bienvenida">Bienvenidos</p>
                     <h2>
-                        A... <span>Look Car Mza</span>, Detailing Automotor
+                        Somos <span>Look Car Mza</span>, Detailing Automotor
                     </h2>
                     <p class="descripcion">
-                        Donde encontrarás la marca N°1 de Argentina dedicada a la elaboración y
+                        Marca N°1 de Argentina dedicada a la elaboración y
                         comercialización de productos para el cuidado y
                         detailing automotor.
                     </p>
-                    <a href="#">Ir a Productos</a>
+                    <a href="#portfolio">Ir a Productos</a>
                 </div>
             </div>
         </section>
@@ -57,7 +107,7 @@
         <!--Sección sobre nosotros-->
         <section id="sobremi">
             <div class="contenedor-foto">
-                <img src="" alt="" />
+                <img src="img/foto.jpg" alt="" />
             </div>
             <div class="sobremi">
                 <a class="titulo-seccion">Sobre Nosotros</a>
@@ -81,16 +131,23 @@
             <h3 class="titulo-seccion">SERVICIOS</h3>
             <div class="fila">
                 <div class="servicio">
+                    <span class="icono"
+                        ><i class="fa-solid fa-location-dot"></i
+                    ></span>
                     <h4>COBERTURA NACIONAL.</h4>
                     <hr />
                     <p>Distribuidores y puntos de venta en todo el país.</p>
                 </div>
                 <div class="servicio">
+                    <span class="icono"><i class="fa-solid fa-globe"></i></span>
                     <h4>CUIDADO DEL MEDIOAMBIENTE.</h4>
                     <hr />
                     <p>Productos 100% biodegradables hechos en Argentina.</p>
                 </div>
                 <div class="servicio">
+                    <span class="icono"
+                        ><i class="fa-solid fa-address-book"></i
+                    ></span>
                     <h4>COMUNIDAD ONLINE.</h4>
                     <hr />
                     <p>
@@ -100,6 +157,9 @@
             </div>
             <div class="fila">
                 <div class="servicio">
+                    <span class="icono"
+                        ><i class="fa-solid fa-network-wired"></i
+                    ></span>
                     <h4>VARIEDAD.</h4>
                     <hr />
                     <p>
@@ -107,16 +167,173 @@
                     </p>
                 </div>
                 <div class="servicio">
+                    <span class="icono"><i class="fa-solid fa-star"></i></span>
                     <h4>DISEÑO SUPERIOR.</h4>
                     <hr />
                     <p>Envases coleccionables con matriz propia.</p>
                 </div>
                 <div class="servicio">
+                    <span class="icono"><i class="fa-solid fa-pen"></i></span>
                     <h4>CAPACITACIÓN.</h4>
                     <hr />
                     <p>Cursos de detailing con certificación profesional.</p>
                 </div>
             </div>
         </section>
+        <!-- Sección Productos -->
+        <section id="portfolio">
+            <h3 class="titulo-seccion">Productos</h3>
+            <div class="fila">
+                <div class="proyecto">
+                    <div class="overlay"></div>
+                    <a href="#" target="_blank"
+                        ><img src="img/proyecto1.jpg" alt=""
+                    /></a>
+                    <div class="info">
+                        <h4>QUICK DETAIL</h4>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <div class="overlay"></div>
+                    <a href="#" target="_blank"
+                        ><img src="img/proyecto2.jpg" alt=""
+                    /></a>
+                    <div class="info">
+                        <h4>CERAS CARNAUBA</h4>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <div class="overlay"></div>
+                    <a href="#" target="_blank">
+                        <img src="img/proyecto3.jpg" alt=""
+                    /></a>
+                    <div class="info">
+                        <h4>SELLADORES HÍBRIDOS</h4>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="proyecto">
+                    <div class="overlay"></div>
+                    <a href="#" target="_blank">
+                        <img src="img/proyecto4.jpg" alt="" />
+                    </a>
+                    <div class="info">
+                        <h4>SHAMPOO</h4>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <div class="overlay"></div>
+                    <a href="#" target="_blank">
+                        <img src="img/proyecto5.jpg" alt="" />
+                    </a>
+                    <div class="info">
+                        <h4>LIMPIADORES</h4>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <div class="overlay"></div>
+                    <a href="#" target="_blank">
+                        <img src="img/proyecto6.jpg" alt="" />
+                    </a>
+                    <div class="info">
+                        <h4>EXTERIORES</h4>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="fila">
+                <div class="proyecto">
+                    <div class="overlay"></div>
+                    <a href="#" target="_blank">
+                        <img src="img/proyecto7.jpg" alt="" />
+                    </a>
+                    <div class="info">
+                        <h4>INTERIORES</h4>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <div class="overlay"></div>
+                    <a href="#" target="_blank">
+                        <img src="img/proyecto8.jpg" alt="" />
+                    </a>
+                    <div class="info">
+                        <h4>SELLADORES CERÁMICOS</h4>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <div class="overlay"></div>
+                    <a href="#" target="_blank">
+                        <img src="img/proyecto9.jpg" alt="" />
+                    </a>
+                    <div class="info">
+                        <h4>TOXIC GALLON'S COMPANY</h4>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sección Contacto -->
+        <section id="contacto">
+            <h3 class="titulo-seccion">Contactanos ahora</h3>
+            <div class="contenedor-form">
+                <form action="" id="form">
+                    <div class="fila mitad">
+                        <input
+                            type="text"
+                            placeholder="Nombre Completo"
+                            class="input-mitad"
+                            id="from_name"
+                        />
+                        <input
+                            type="text"
+                            placeholder="Dirección de e-mail"
+                            class="input-mitad"
+                            id="email_id"
+                        />
+                    </div>
+                    <div class="fila">
+                        <input
+                            type="text"
+                            placeholder="Tema..."
+                            class="input-full"
+                        />
+                    </div>
+                    <div class="fila">
+                        <textarea
+                            name=""
+                            id="message"
+                            cols="30"
+                            rows="10"
+                            placeholder="Tu mensaje..."
+                            class="input-full"
+                        ></textarea>
+                    </div>
+                    <input
+                        id="button"
+                        type="submit"
+                        value="Enviar mensaje"
+                        class="btn-enviar"
+                    />
+                </form>
+            </div>
+        </section>
+
+        <!-- Sección Footer -->
+        <footer>
+            <p>Todos los derechos reservados - 2022</p>
+            <div class="redes">
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+            </div>
+        </footer>
     </body>
 </html>
